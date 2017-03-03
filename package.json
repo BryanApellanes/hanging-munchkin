@@ -1,0 +1,29 @@
+{
+  "name": "hanging-munchkin",
+  "version": "1.0.0",
+  "description": "happy path tester",
+  "main": "hmun.js",
+  "scripts": {
+    "test-unit": "node %NODE_DEBUG_OPTION% ./node_modules/jasmine/bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanApellanes/hanging-munchkin.git"
+  },
+  "keywords": [
+    "casperjs",
+    "spec",
+    "test",
+    "ui"
+  ],
+  "author": "Bryan Apellanes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BryanApellanes/hanging-munchkin/issues"
+  },
+  "homepage": "https://github.com/BryanApellanes/hanging-munchkin#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jasmine-spec-reporter": "^3.2.0"
+  }
+}
