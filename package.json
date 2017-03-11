@@ -1,10 +1,11 @@
 {
   "name": "hanging-munchkin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "happy path tester",
-  "main": "hmun.js",
+  "main": "munchkin.js",
   "scripts": {
-    "test-unit": "node %NODE_DEBUG_OPTION% ./node_modules/jasmine/bin/jasmine"
+    "test": "mocha-casperjs %NODE_DEBUG_OPTION%",
+    "unit-tests": "node unit-tests.js $NODE_DEBUG_OPTION"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,13 @@
     "url": "https://github.com/BryanApellanes/hanging-munchkin/issues"
   },
   "homepage": "https://github.com/BryanApellanes/hanging-munchkin#readme",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
   "devDependencies": {
-    "jasmine": "^2.5.3",
-    "jasmine-spec-reporter": "^3.2.0"
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "node-yaml": "^3.0.3"
   }
 }
