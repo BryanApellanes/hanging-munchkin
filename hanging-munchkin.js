@@ -1,29 +1,21 @@
 module.exports = (function(){
     "use strict";
-    var _ = require("lodash"),
-        interaction = require("./interaction.js"),
-        munchkinOptions = {
-
-    };
 
     return{
-        configure: function(options){
-
-        },
-        getInteraction: function(name){
-            return {
-                name: name,
-                action: {
-                    click: "#button"
-                },
-                wait: {
-                    forSelector: "#blah"
-                },
-                expect: function(){
-                    return true;
-                }
-            };
-        },
+        // getInteraction: function(name){
+        //     return {
+        //         name: name,
+        //         action: {
+        //             click: "#button"
+        //         },
+        //         wait: {
+        //             forSelector: "#blah"
+        //         },
+        //         expect: function(){
+        //             return true;
+        //         }
+        //     };
+        // },
         testCasperCalls: function(casper){
             console.log('running testCasperCalls');
 
@@ -39,7 +31,11 @@ module.exports = (function(){
             return casper;
         },
         runInteraction: function(interactionName, casper){
-
+            console.log("running interaction " + interactionName);
+            casper.thenOpen('http://google.com', function(){
+                this.echo(this.getTitle());
+            });
+            return casper;
         }
     };
 })();
