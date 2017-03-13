@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./jquery-3.1.1.min.js"></script>
+    <title>Hanging-Munchkin Tests</title>
+</head>
+<body>
+
+<ul>
+    <li>
+        <label for="aLink">1.</label><a id="aLink">This is a link</a>
+    </li>
+    <li>
+        <label for="aButton">2.</label><button id="aButton">This is a button</button>
+    </li>
+    <li>
+        <label for="divToggle">3.</label><button id="divToggle">Toggle Div</button>
+    </li>
+    <li>
+        <form id="aForm">
+            <input type="text" id="Field1" name="Field1" />
+            <input type="text" id="Field2" name="Field2" />
+            <input type="button" id="submitButton" value="click me"/>
+        </form>
+    </li>
+</ul>
+
+<p id="aParagraph">
+    this is a paragraph
+</p>
+
+<div id="aDiv" style="display: none;">
+    This is a div that is initially hidden
+</div>
+<div id="theArea">
+    The area
+</div>
+<div id="showOnMouseOverDiv" style="display: none;">
+    This div shows on mouseover of "the area"
+</div>
+</body>
+<script>
+    $("#aLink").off("click").on("click", function(){
+        $("#aParagraph").text("The link was clicked");
+    });
+    $("#aButton").off("click").on("click", function(){
+        $("#aParagraph").text("The button was clicked");
+    });
+    $("#divToggle").off("click").on("click", function(){
+       $("#aDiv").toggle();
+    });
+    $("#aForm").submit(function(ev){
+        ev.preventDefault();
+    });
+    $("#submitButton").off("click").on("click", function(ev){
+        ev.preventDefault();
+        var val1= $("#Field1").val(),
+            val2 = $("#Field2").val();
+        $("#aParagraph").text(val1 + ": " + val2);
+    })
+    $("#theArea")
+        .off("mouseover")
+        .on("mouseover", function(){
+            $("#showOnMouseOverDiv").show();
+        })
+        .off("mouseout")
+        .on("mouseout", function(){
+            $("#showOnMouseOverDiv").hide();
+        })
+
+</script>
+</html>
